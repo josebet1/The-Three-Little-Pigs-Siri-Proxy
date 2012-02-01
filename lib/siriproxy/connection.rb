@@ -100,7 +100,7 @@ class SiriProxy::Connection < EventMachine::Connection
         puts "[Keys - SiriProy] Key [#{@key.id}] Loaded from Database for Validation Data" 
         puts "[Keys - SiriProy] Key [#{@key.id}] Loaded from Database for Validation Data For Object with aceid [#{object["aceId"]}] and class #{object["class"]}" if $LOG_LEVEL > 2
         @oldkeyload=@key.keyload          
-        @key.keyload=@key.keyload+10  
+        @key.keyload=@key.keyload+1
         $keyDao.setkeyload(@key) 
         puts "[Key - SiriProxy] Key with id[#{@key.id}] increased it's keyload from [#{@oldkeyload}] to [#{@key.keyload}]" 
         self.sessionValidationData= @key.sessionValidation	
